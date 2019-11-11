@@ -18,7 +18,7 @@ module.exports = {
             new OptimizeCssAssetsPlugin(),
             new TerserPlugin(),
             new HtmlWebpackPlugin({
-                template: "./src/index.html",
+                template: "./public/index.html",
                 minify: {
                     removeAttributeQuotes: true,
                     collapseWhitespace: true,
