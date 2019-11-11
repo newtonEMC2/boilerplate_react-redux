@@ -1,7 +1,11 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: "development",
     entry: "./src/index.js",
+    plugins: [new HtmlWebpackPlugin({
+        template: "./src/index.html"
+    })],
     module: {
         rules: [
             {
@@ -11,6 +15,10 @@ module.exports = {
                     "css-loader", //2. turns css intro commonjs
                     "sass-loader" //1. turns sass into css
                 ]
+            },
+            {
+                test: /\.html$/,
+                use: ["html-loader"]
             },
             {
                 test: /\.(svg|png|jpe?g|gif)$/,
@@ -28,6 +36,5 @@ module.exports = {
                 use: ['babel-loader']
             }
         ]
-    },
-    
+    }
 };
