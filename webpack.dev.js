@@ -11,7 +11,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    "style-loader", //3. inject styles intro DOM 
+                    "style-loader", //3. inject styles into DOM 
                     "css-loader", //2. turns css intro commonjs
                     "sass-loader" //1. turns sass into css
                 ]

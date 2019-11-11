@@ -1,0 +1,12 @@
+@if variable-exists($font-url--google){
+    //import if Google fonts URL is defined
+    @import url($font-url--google);
+}
+
+@function em($target, $context: $base__font-size){
+    @return ($target / $context) * 1em;
+}
+
+@function rem($target){
+    @return ($target / $base__font-size) * 1rem;
+}
