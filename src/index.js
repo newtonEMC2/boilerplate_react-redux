@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from 'react-redux'
 import MainPage from "./App";
 import createStore from './utils/store'
+import registerServiceWorker from '../registerServiceWorker';
 
 ReactDOM.render(
     <Provider store={createStore()}>
@@ -10,3 +11,5 @@ ReactDOM.render(
     </Provider>,
     document.getElementById("root")
 );
+
+registerServiceWorker()
