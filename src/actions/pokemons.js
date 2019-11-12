@@ -8,9 +8,7 @@ export const fetchPokemons = () => {
             .then(data => {
                 dispatch({
                     "type": "FETCH_POKEMONS",
-                    "payload": {
-                        "pokemons": data.results
-                    }
+                    "payload": data.results
                 })
             })
 

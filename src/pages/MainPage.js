@@ -5,13 +5,13 @@ import axios from 'axios'
 
 import { fetchPokemons } from '../actions/pokemons'
 import TopHeader from '../components/headers/TopHeader';
+import PokemonMainGrid from '../components/grids/PokemonMainGrid'
 
 
 class MainPage extends Component {
 
 
     componentDidMount() {
-        
         this.props.fetchPokemons()
     }
 
@@ -20,16 +20,10 @@ class MainPage extends Component {
         return (
             <div>
                 < TopHeader />
-
+                < PokemonMainGrid />
             </div>
         )
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        pokemons: state.pokemons
-    }
-}
-
-export default connect(mapStateToProps, { fetchPokemons })(MainPage)
+export default connect(null, { fetchPokemons })(MainPage)

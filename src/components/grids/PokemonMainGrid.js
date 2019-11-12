@@ -4,21 +4,18 @@ import PropTypes from 'prop-types'
 
 class PokemonMainGrid extends Component {
 
-
     render() {
-        console.log(pokemons)
+        console.log(this.props.pokemons)
         return (
 
+            < div className="" >
 
-            <div className="">
-                ieeee
-                
-                {/* {
+                {
                     this.props.pokemons.map((pokemon, index) => (
-                        <div>{index}</div>
+                        <div>{pokemon.name}</div>
                     ))
-                } */}
-            </div>
+                }
+            </div >
 
             // <div className="">
             //     {
@@ -34,7 +31,6 @@ class PokemonMainGrid extends Component {
         )
     }
 }
-
 function mapStateToProps(state) {
     return {
         pokemons: state.pokemons
