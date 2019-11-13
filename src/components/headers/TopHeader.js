@@ -3,9 +3,7 @@ import React from 'react'
 const TopHeader = () => {
     return (
         <div id="header" className="">
-            <div className="">
-                <h1 className="">Header</h1>
-            </div>
+            <img id="header__logo" src="/public/images/headerimg.PNG"></img>
         </div>
 
     )

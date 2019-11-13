@@ -11,12 +11,13 @@ class App extends Component {
     render() {
         return (
             <div>
-                <div id="header">
+                <section>
                     <TopHeader />
-                </div>
-                <div id="main">
+                </section>
+                
+                <section id="main">
                     <Route exact path='/' component={MainPage}></Route>
-                </div>
+                </section>
 
                 
             </div>

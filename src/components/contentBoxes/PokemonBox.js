@@ -11,8 +11,8 @@ const PokemonBox = ({name, url, fetchPokemon}) => {
 
     return (
         <div className="boxes" onClick={onclick}>
-            <img src={"http://pokestadium.com/sprites/xy/" + name + ".gi"}></img>
-            <div>{name}</div>
+            <img className="boxes__pokeimg" src={"http://pokestadium.com/sprites/xy/" + name + ".gif"}></img>
+            <div className="boxes__pokename">{name}</div>
         </div>
     )
 

@@ -1,6 +1,12 @@
 #grid{
-    width: 100%;
+    width: 80%;
+    max-width: 779px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+
+    @include mq(m){
+        justify-content: space-between;
+    }
 }
