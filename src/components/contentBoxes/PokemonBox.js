@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
+import { fetchPokemon } from '../../actions/pokemons'
+import { connect } from 'react-redux'
 
-const PokemonBox = (props) => {
-    const {name} = props
+
+const PokemonBox = ({name, fetchPokemon}) => {
+
+    const onclick = () => {
+        fetchPokemon(name)
+    }
+
     return (
-        <div>
-            <a href={`https://pokeapi.co/api/v2/pokemon${name}?offset=0&limit=1000`}>{name}</a>
+        <div onClick={onclick}>
+            <div>{name}</div>
         </div>
     )
 
 }
 
-export default PokemonBox
+export default connect(null, { fetchPokemon })(PokemonBox)

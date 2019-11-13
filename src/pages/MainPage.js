@@ -19,7 +19,6 @@ class MainPage extends Component {
     render() {
         return (
             <div>
-                < TopHeader />
                 < PokemonMainGrid />
             </div>
         )
