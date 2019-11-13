@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
+import PokemonBox from '../contentBoxes/PokemonBox'
+
 class PokemonMainGrid extends Component {
 
     render() {
@@ -12,7 +14,7 @@ class PokemonMainGrid extends Component {
 
                 {
                     this.props.pokemons.map((pokemon, index) => (
-                        <div>{pokemon.name}</div>
+                        <PokemonBox name={pokemon.name}></PokemonBox>
                     ))
                 }
             </div >
