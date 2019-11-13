@@ -10,11 +10,11 @@ class PokemonMainGrid extends Component {
         console.log(this.props.pokemons)
         return (
 
-            < div className="" >
+            < div id="grid" className="" >
 
                 {
-                    this.props.pokemons.map(({ name }, index) => (
-                        <PokemonBox key={name} name={name}></PokemonBox>
+                    this.props.pokemons.map(({ name, url }, index) => (
+                        <PokemonBox key={name} name={name} url={url}></PokemonBox>
                     ))
                 }
             </div >
