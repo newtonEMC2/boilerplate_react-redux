@@ -1,6 +1,18 @@
 .boxes{
     margin: .3rem;
     width: 25%;
-    padding-bottom: 100%;
-    
+
+    &:after{
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    &__pokeimg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
 }
