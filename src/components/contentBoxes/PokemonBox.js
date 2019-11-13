@@ -1,19 +1,26 @@
 import React, { Component } from 'react'
 import { fetchPokemon } from '../../actions/pokemons'
+import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
 const PokemonBox = ({name, url, fetchPokemon}) => {
 
-    const onclick = () => {
+    const onclick = (e) => {
         fetchPokemon(name)
     }
 
+    const sanitize_src = (src) => {
+        return src.replace("-", "")
+    }
+
     return (
-        <div className="boxes" onClick={onclick}>
-            <img className="boxes__pokeimg" src={"http://pokestadium.com/sprites/xy/" + name + ".gif"}></img>
+        <Link to={'/' + name} className="boxes" onClick={onclick}>
+            <img className="boxes__pokeimg" 
+                 src={sanitize_src("http://pokestadium.com/sprites/xy/" + name + ".gif")}>
+            </img>
             <div className="boxes__pokename">{name}</div>
-        </div>
+        </Link>
     )
 
 }

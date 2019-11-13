@@ -3,14 +3,13 @@ import { connect } from 'react-redux'
 
 
 const DetailsPage = ({pokemon}) => {
-    console.log(pokemon)
+    const {weight} = pokemon
     return (
         <div>
-            
+            <p>{weight}</p>
         </div>
     )
 }
-
 const mapStateToProps = (state) => {
     return {
         pokemon: state.pokemon

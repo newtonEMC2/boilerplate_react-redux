@@ -18,11 +18,18 @@ class MainPage extends Component {
 
     render() {
         return (
-            <div>
-                < PokemonMainGrid />
-            </div>
+            <section>
+                <TopHeader />
+                {this.props.pokemons.length ? < PokemonMainGrid /> : <p>loading</p>}
+            </section>
         )
     }
 }
 
-export default connect(null, { fetchPokemons })(MainPage)
+const mapStateToProps = (state) => {
+    return {
+        pokemons: state.pokemons
+    }
+}
+
+export default connect(mapStateToProps, { fetchPokemons })(MainPage)
