@@ -1,16 +1,28 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { fetchPokemon } from '../actions/pokemons'
+
 
 import PokemonDetailBox from '../components/contentBoxes/PokemonDetailBox'
 
 
-const DetailsPage = ({ pokemon }) => {
+class DetailsPage extends Component {
     
-    return (
-        <section id="detailsPage">
-            <PokemonDetailBox pokemon={pokemon} />
-        </section>
-    )
+    componentDidMount() {
+        const { name } = this.props.match.params
+        this.props.fetchPokemon(name)
+    }
+
+    render() {
+        return (
+            <section id="detailsPage" >
+                <PokemonDetailBox pokemon={this.props.pokemon} />
+            </section>
+        )
+    }
+
+
+
 }
 
 const mapStateToProps = (state) => {
@@ -19,4 +31,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {})(DetailsPage)
+export default connect(mapStateToProps, { fetchPokemon })(DetailsPage)

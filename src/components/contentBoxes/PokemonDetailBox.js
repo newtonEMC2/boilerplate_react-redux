@@ -32,20 +32,20 @@ const PokemonDetailBox = ({ pokemon }) => {
             </div>
             <div className="pokedetails__info">
                 <div>
-                    <p>
+                    <div className="pokedetails__info-properties">
                         <span className="pokedetails__info-label">ID: </span><span>{id}</span>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="pokedetails__info-properties">
                         <span className="pokedetails__info-label">TYPE: </span>
                         <span>{get_types(types)}</span>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="pokedetails__info-properties">
                         <span className="pokedetails__info-label">HEIGHT: </span><span>{height}</span>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="pokedetails__info-properties">
                         <span className="pokedetails__info-label">ABILITIES: </span>
                         <ul className="pokedetails__info-sub">{get_abilities(abilities)}</ul>
-                    </p>
+                    </div>
                 </div>
             </div>
 

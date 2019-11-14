@@ -11,7 +11,6 @@ import Spinner from '../components/spinners/loadSpinner'
 
 class MainPage extends Component {
 
-
     componentDidMount() {
         if(this.props.pokemons.length == 0) this.props.fetchPokemons()
     }

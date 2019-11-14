@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
-import { fetchPokemon } from '../../actions/pokemons'
 import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
 const PokemonBox = ({name, url, fetchPokemon}) => {
-
-    const onclick = (e) => {
-        fetchPokemon(name)
-    }
 
     const sanitize_src = (src) => src.replace("-", "")
 
@@ -23,4 +18,4 @@ const PokemonBox = ({name, url, fetchPokemon}) => {
 
 }
 
-export default connect(null, { fetchPokemon })(PokemonBox)
+export default connect(null, { })(PokemonBox)
