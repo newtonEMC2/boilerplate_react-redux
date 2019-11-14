@@ -13,7 +13,7 @@ class MainPage extends Component {
 
 
     componentDidMount() {
-        this.props.fetchPokemons()
+        if(this.props.pokemons.length == 0) this.props.fetchPokemons()
     }
 
 

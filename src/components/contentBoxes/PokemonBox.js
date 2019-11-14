@@ -10,9 +10,7 @@ const PokemonBox = ({name, url, fetchPokemon}) => {
         fetchPokemon(name)
     }
 
-    const sanitize_src = (src) => {
-        return src.replace("-", "")
-    }
+    const sanitize_src = (src) => src.replace("-", "")
 
     return (
         <Link to={'/pokemon/' + name} className="boxes" onClick={onclick}>

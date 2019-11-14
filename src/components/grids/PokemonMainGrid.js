@@ -7,7 +7,6 @@ import PokemonBox from '../contentBoxes/PokemonBox'
 class PokemonMainGrid extends Component {
 
     render() {
-        console.log(this.props.pokemons)
         return (
 
             < div id="grid" className="" >

@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import PokemonDetailBox from '../components/contentBoxes/PokemonDetailBox'
+
 
 const DetailsPage = ({ pokemon }) => {
-    const { weight } = pokemon
+    
     return (
         <section id="detailsPage">
-            <div className="detailsPokemonBox">
-
-            </div>
-            <p>{weight}</p>
+            <PokemonDetailBox pokemon={pokemon} />
         </section>
     )
 }
+
 const mapStateToProps = (state) => {
     return {
         pokemon: state.pokemon

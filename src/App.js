@@ -17,7 +17,7 @@ class App extends Component {
                     )} />
                     <Route exact path='/pokemon' component={MainPage} />
                     <Route path='/pokemon/:name' component={DetailsPage} />
-                    <Route component={Notfound} />
+                    <Route path="*" component={Notfound} />
 
                 </Switch>
             </BrowserRouter>
