@@ -4,6 +4,7 @@ import "./scss/application.scss";
 import MainPage from './pages/MainPage'
 import DetailsPage from './pages/DetailsPage'
 
+const Notfound = () => <h2>page has not been found</h2>
 
 class App extends Component {
 
@@ -14,6 +15,8 @@ class App extends Component {
                     <Switch>
                         <Route exact path='/' component={MainPage} />
                         <Route path='/:name' component={DetailsPage} />
+                        <Route component={Notfound} />
+                            
                     </Switch>
                 </div>
             </BrowserRouter>
