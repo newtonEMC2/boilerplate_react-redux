@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
@@ -8,7 +8,7 @@ const PokemonBox = ({name, url, fetchPokemon}) => {
     const sanitize_src = (src) => src.replace("-", "")
 
     return (
-        <Link to={'/pokemon/' + name} className="boxes" onClick={onclick}>
+        <Link to={'/pokemon/' + name} className="boxes">
             <img className="boxes__pokeimg" 
                  src={sanitize_src("http://pokestadium.com/sprites/xy/" + name + ".gif")}>
             </img>

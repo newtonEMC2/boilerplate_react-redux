@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { fetchPokemon } from '../actions/pokemons'
 
-
+import Spinner from '../components/spinners/loadSpinner'
 import PokemonDetailBox from '../components/contentBoxes/PokemonDetailBox'
 
 
 class DetailsPage extends Component {
-    
+
     componentDidMount() {
         const { name } = this.props.match.params
         this.props.fetchPokemon(name)
@@ -16,8 +16,19 @@ class DetailsPage extends Component {
     render() {
         return (
             <section id="detailsPage" >
-                <PokemonDetailBox pokemon={this.props.pokemon} />
+                {
+                    this.props.pokemon.name
+                        ?
+                        <Fragment>
+                            <PokemonDetailBox pokemon={this.props.pokemon} />
+                        </Fragment>
+                        :
+                        <Spinner />
+                }
             </section>
+
+
+
         )
     }
 

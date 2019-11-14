@@ -1,9 +1,12 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 
 const PokemonDetailBox = ({ pokemon }) => {
+
     const { name, types = [], id, height, abilities = [] } = pokemon
+
     const sanitize_src = (src) => src.replace("-", "")
 
     const get_types = (types) => {
@@ -22,7 +25,7 @@ const PokemonDetailBox = ({ pokemon }) => {
 
     return (
         <div className="pokedetails">
-            <span className="pokedetails__close">X</span>
+            <Link to={'/pokemon'} className="pokedetails__close">X</Link>
             <div className="pokedetails__main">
                 <img className="pokedetails__main-img"
                     src={sanitize_src("http://pokestadium.com/sprites/xy/" + name + ".gif")}
