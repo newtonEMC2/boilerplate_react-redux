@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 
 import { fetchPokemons } from '../actions/pokemons'
 import TopHeader from '../components/headers/TopHeader';
-import PokemonMainGrid from '../components/grids/PokemonMainGrid'
+import PokemonMainGrid from '../components/grids/PokemonMainGrid';
+import Spinner from '../components/spinners/loadSpinner'
 
 
 class MainPage extends Component {
@@ -19,8 +20,16 @@ class MainPage extends Component {
     render() {
         return (
             <section>
-                <TopHeader />
-                {this.props.pokemons.length ? < PokemonMainGrid /> : <p>loading</p>}
+                {
+                    this.props.pokemons.length
+                        ?
+                        <Fragment>
+                            <TopHeader />
+                            < PokemonMainGrid />
+                        </Fragment>
+                        :
+                        <Spinner />
+                }
             </section>
         )
     }

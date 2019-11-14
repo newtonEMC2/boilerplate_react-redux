@@ -1,11 +1,11 @@
 import React from 'react';
 
-function ShowDetail() {
+function Spinner() {
   return (
     <div id="loader">
-      <i className="fa fa-cog fa-spin" />
+      <i class="fas fa-spinner fa-spin"></i>
     </div>
   );
 }
 
-export default ShowDetail;
+export default Spinner;
