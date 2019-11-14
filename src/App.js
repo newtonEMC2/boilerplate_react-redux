@@ -11,21 +11,16 @@ class App extends Component {
     render() {
         return (
             <BrowserRouter>
-                <div id="main">
-                    <Switch>
-                        <Route exact path="/" render={() => (
-                            <Redirect to="/pokemon" />
-                        )} />
-                        <Route exact path='/pokemon' component={MainPage} />
-                        <Route path='/pokemon/:name' component={DetailsPage} />
-                        <Route component={Notfound} />
+                <Switch>
+                    <Route exact path="/" render={() => (
+                        <Redirect to="/pokemon" />
+                    )} />
+                    <Route exact path='/pokemon' component={MainPage} />
+                    <Route path='/pokemon/:name' component={DetailsPage} />
+                    <Route component={Notfound} />
 
-                    </Switch>
-                </div>
+                </Switch>
             </BrowserRouter>
-
-
-
         );
     }
 }

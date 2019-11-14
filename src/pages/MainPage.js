@@ -19,7 +19,7 @@ class MainPage extends Component {
 
     render() {
         return (
-            <section>
+            <section id="mainPage">
                 {
                     this.props.pokemons.length
                         ?

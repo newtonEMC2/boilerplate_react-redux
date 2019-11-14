@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 
-const DetailsPage = ({pokemon}) => {
-    const {weight} = pokemon
+const DetailsPage = ({ pokemon }) => {
+    const { weight } = pokemon
     return (
-        <div>
+        <section id="detailsPage">
+            <div className="detailsPokemonBox">
+
+            </div>
             <p>{weight}</p>
-        </div>
+        </section>
     )
 }
 const mapStateToProps = (state) => {
@@ -16,4 +19,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { })(DetailsPage)
+export default connect(mapStateToProps, {})(DetailsPage)
