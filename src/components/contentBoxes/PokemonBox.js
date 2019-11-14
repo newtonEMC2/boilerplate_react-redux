@@ -15,7 +15,7 @@ const PokemonBox = ({name, url, fetchPokemon}) => {
     }
 
     return (
-        <Link to={'/' + name} className="boxes" onClick={onclick}>
+        <Link to={'/pokemon/' + name} className="boxes" onClick={onclick}>
             <img className="boxes__pokeimg" 
                  src={sanitize_src("http://pokestadium.com/sprites/xy/" + name + ".gif")}>
             </img>

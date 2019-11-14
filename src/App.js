@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import "./scss/application.scss";
 import MainPage from './pages/MainPage'
 import DetailsPage from './pages/DetailsPage'
@@ -13,10 +13,13 @@ class App extends Component {
             <BrowserRouter>
                 <div id="main">
                     <Switch>
-                        <Route exact path='/' component={MainPage} />
-                        <Route path='/:name' component={DetailsPage} />
+                        <Route exact path="/" render={() => (
+                            <Redirect to="/pokemon" />
+                        )} />
+                        <Route exact path='/pokemon' component={MainPage} />
+                        <Route path='/pokemon/:name' component={DetailsPage} />
                         <Route component={Notfound} />
-                            
+
                     </Switch>
                 </div>
             </BrowserRouter>
