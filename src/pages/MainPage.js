@@ -34,6 +34,11 @@ class MainPage extends Component {
     }
 }
 
+MainPage.propTypes = {
+    pokemons: PropTypes.array,
+    fetchPokemons: PropTypes.func
+}
+
 const mapStateToProps = (state) => {
     return {
         pokemons: state.pokemons

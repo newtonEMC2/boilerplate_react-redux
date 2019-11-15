@@ -34,6 +34,10 @@ class DetailsPage extends Component {
     }
 }
 
+DetailsPage.propTypes = {
+    pokemon: PropTypes.object,
+    fetchPokemon: PropTypes.func
+}
 
 const mapStateToProps = (state) => {
     return {

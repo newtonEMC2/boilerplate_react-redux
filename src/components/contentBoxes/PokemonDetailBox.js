@@ -59,7 +59,7 @@ const PokemonDetailBox = ({ pokemon }) => {
 PokemonDetailBox.propTypes = {
     pokemon: PropTypes.shape({
         name: PropTypes.string,
-        types: PropTypes. array,
+        types: PropTypes.array,
         id: PropTypes.number,
         height: PropTypes.number,
         abilities: PropTypes.array
