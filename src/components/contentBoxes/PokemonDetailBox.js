@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-
+import PropTypes from 'prop-types'
 
 const PokemonDetailBox = ({ pokemon }) => {
 
@@ -18,8 +17,8 @@ const PokemonDetailBox = ({ pokemon }) => {
     }
 
     const get_abilities = (abilities) => {
-        return abilities.map(anAbility => {
-            return <li>{anAbility.ability.name}</li>
+        return abilities.map((anAbility, index) => {
+            return <li key={index}>{anAbility.ability.name}</li>
         })
     }
 
@@ -55,6 +54,16 @@ const PokemonDetailBox = ({ pokemon }) => {
         </div>
     )
 
+}
+
+PokemonDetailBox.propTypes = {
+    pokemon: PropTypes.shape({
+        name: PropTypes.string,
+        types: PropTypes. array,
+        id: PropTypes.number,
+        height: PropTypes.number,
+        abilities: PropTypes.array
+    })
 }
 
 export default PokemonDetailBox

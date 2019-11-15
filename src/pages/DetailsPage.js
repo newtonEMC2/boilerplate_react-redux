@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { fetchPokemon } from '../actions/pokemons'
 
 import Spinner from '../components/spinners/loadSpinner'
@@ -31,10 +32,8 @@ class DetailsPage extends Component {
 
         )
     }
-
-
-
 }
+
 
 const mapStateToProps = (state) => {
     return {
