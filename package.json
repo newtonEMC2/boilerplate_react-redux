@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alexis Corbacho",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",

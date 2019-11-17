@@ -1,4 +1,5 @@
 module.exports = {
   verbose: true,
-  setupFilesAfterEnv: ["./src/setupTests.js"]
+  setupFilesAfterEnv: ["./src/setupTests.js"],
+  testRegex: "__test__/.*\\.test\\.js$"
 };

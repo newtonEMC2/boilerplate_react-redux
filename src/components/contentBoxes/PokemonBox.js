@@ -7,7 +7,7 @@ const PokemonBox = ({ name }) => {
   const sanitize_src = src => src.replace("-", "");
 
   return (
-    <Link to={"/pokemon/" + name} className="boxes">
+    <Link to={"/pokemon/" + name} className="boxes" data-test="pokemonbox">
       <img
         className="boxes__pokeimg"
         src={sanitize_src("http://pokestadium.com/sprites/xy/" + name + ".gif")}
