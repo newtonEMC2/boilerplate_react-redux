@@ -1,0 +1,26 @@
+//================================================
+//mixins
+//================================================
+
+// Media queries
+
+@mixin mq($break) {
+    @if $break == "s" {
+      @media (min-width: $brkpoint-sm) and (max-width: $brkpoint-md) {
+        @content;
+      }
+    }
+    @else if $break == "m" {
+      @media (min-width: $brkpoint-md + 1) {
+        @content;
+      }
+    }
+    @else if $break == "l" {
+      @media (min-width: $brkpoint-lg) {
+        @content;
+      }
+    }
+     @else {
+         @error "no breakpoint for value `#{$break}`."
+    }
+  }

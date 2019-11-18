@@ -1,0 +1,43 @@
+.pokedetails{
+    background: #fafafa;
+    color: #333333;
+    padding: 2rem 1rem;
+    border: 2px solid #333333;
+    position: relative;
+
+    &__close{
+        position: absolute;
+        left: auto;
+        right: 0px;
+        top: 0px;
+        padding: 1rem 1.3rem;
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+    }
+
+    &__main{
+        text-align: center;
+
+        &-name{
+            text-transform: capitalize;
+        }
+    }
+
+    &__info{
+        &-properties{
+            margin-top: .4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        &-label{
+            font-weight: bold;
+        }
+
+        &-sub{
+            padding-left: 40px;
+            list-style-type: circle;
+        }
+    }
+}
+

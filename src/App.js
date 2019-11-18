@@ -1,25 +1,26 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import "./scss/application.scss";
 import MainPage from './pages/MainPage'
 import DetailsPage from './pages/DetailsPage'
-import TopHeader from './components/headers/TopHeader'
 
+const Notfound = () => <h2>page has not been found</h2>
 
 class App extends Component {
 
     render() {
         return (
-            <div>
-                <div id="header">
-                    <TopHeader />
-                </div>
-                <div id="main">
-                    <Route exact path='/' component={MainPage}></Route>
-                </div>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" render={() => (
+                        <Redirect to="/pokemon" />
+                    )} />
+                    <Route exact path='/pokemon' component={MainPage} />
+                    <Route path='/pokemon/:name' component={DetailsPage} />
+                    <Route path="*" component={Notfound} />
 
-                
-            </div>
+                </Switch>
+            </BrowserRouter>
         );
     }
 }

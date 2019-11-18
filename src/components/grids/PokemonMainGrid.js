@@ -7,13 +7,11 @@ import PokemonBox from '../contentBoxes/PokemonBox'
 class PokemonMainGrid extends Component {
 
     render() {
-        console.log(this.props.pokemons)
         return (
 
             < div id="grid" className="" >
-
                 {
-                    this.props.pokemons.map(({ name, url }, index) => (
+                    this.props.pokemons.map(({ name, url }) => (
                         <PokemonBox key={name} name={name} url={url}></PokemonBox>
                     ))
                 }
@@ -22,6 +20,11 @@ class PokemonMainGrid extends Component {
         )
     }
 }
+
+PokemonMainGrid.propTypes = {
+    pokemons: PropTypes.array
+}
+
 const mapStateToProps = (state) => {
     return {
         pokemons: state.pokemons

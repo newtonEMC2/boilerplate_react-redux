@@ -1,6 +1,48 @@
 .boxes{
-    margin: .3rem;
-    width: 25%;
-    padding-bottom: 100%;
+    margin: .3rem 0;
+    width: 90%;
+    min-width: 150px;
+    flex-wrap: wrap;
+    position: relative;
+    border-radius: 5px;
+    border: 2px solid rgba($color: #bbb, $alpha: .95);
+    overflow: hidden;
+    background: white;
+    cursor: pointer;
+    &:after{
+        content: "";
+        display: block;
+        padding-bottom: 75%;
+    }
+
+    &__pokeimg {
+        max-width: 80px;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &__pokename {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: auto;
+        bottom: 7%;
+        text-decoration: none;
+        color: black;
+    }
+
+    &:hover{
+        background: #f5f3f3;
+    }
+
+    @include mq(m){
+        width: 49%;
+    }
+
+    @include mq(l){
+        width: 32%;
+    }
     
+
 }

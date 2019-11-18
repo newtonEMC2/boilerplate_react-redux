@@ -1,21 +1,26 @@
-import React, { Component } from 'react'
-import { fetchPokemon } from '../../actions/pokemons'
-import { connect } from 'react-redux'
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
+const PokemonBox = ({ name }) => {
+  const sanitize_src = src => src.replace("-", "");
 
-const PokemonBox = ({name, url, fetchPokemon}) => {
+  return (
+    <Link to={"/pokemon/" + name} className="boxes" data-test="pokemonbox">
+      <img
+        className="boxes__pokeimg"
+        src={sanitize_src("http://pokestadium.com/sprites/xy/" + name + ".gif")}
+      ></img>
+      <div className="boxes__pokename">{name}</div>
+    </Link>
+  );
+};
 
-    const onclick = () => {
-        fetchPokemon(name)
-    }
+PokemonBox.propTypes = {
+  name: PropTypes.string,
+  url: PropTypes.string,
+  fetchPokemon: PropTypes.func
+};
 
-    return (
-        <div className="boxes" onClick={onclick}>
-            <img src={"http://pokestadium.com/sprites/xy/" + name + ".gi"}></img>
-            <div>{name}</div>
-        </div>
-    )
-
-}
-
-export default connect(null, { fetchPokemon })(PokemonBox)
+export default connect(null, {})(PokemonBox);
